@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/favicon.ico">
+
+    <title>Predict antibiotic side effect</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--script src="../static/js/ie-emulation-modes-warning.js"></script-->
+    <script type="text/javascript" language="javascript" src="../static/jsme/jsme.nocache.js"></script>
+	
+
+    <SCRIPT LANGUAGE="JavaScript">
+
+            function getSmiles() {
+            var drawing = document.JME.smiles();
+			document.getElementById("SMILES").value=drawing;
+				
+				
+			
+}
+
+
+</SCRIPT>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<div class="container-fluid">      	  
+		<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+			<button type="button" class="btn btn-success">Home</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='/db_input'" >Search</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='/about'" >About</a></button>		
+  		
+		</div>
+      </div>  
+	
+	<center>
+	<p>	 
+	<h1>Silico tool to predict antibiotic side effects of drug candidates</h1>
+	<p>
+	</center>
+	
+	
+       
+	<center>
+		<div>
+			
+			<h2>Please enter SMILES of your interested drugs!</h2>
+			<h4><i><b>1.</b> Use	<a href="https://www.drugbank.ca/">DrugBank</a>	to get SMILES. <b>2.</b> Or directly draw the struture using JSME editor.</i></h4>		
+			<br>
+			
+			
+				
+			<div code="JME.class" name="JME" archive="JME.jar" width=600 height=300>
+			You have to enable Java and JavaScritpt on your machine !									
+			</div><button class="btn btn-success btn-lg" onClick="getSmiles()">Get SMILES</button>	
+				
+			<br><br>
+				
+			<form  action="/pred_output" method="GET">        
+          		<label for="SMILES"> </label>
+          		<input type="text" id="SMILES" name='SMILES' value="please enter SMILES here" size='80'>  
+	           <button type="submit" class="btn btn-success btn-lg" >Predict</button>   
+			</form>
+			<h3><font color="red"><b>Please check your input!</b></font></h3>
+			</div>
+			<br><br>
+			<div>
+			
+			
+			
+			
+		</div>
+		
+	
+		
+	</center>
+		
+		
+	
+		
+		<br><br>
+	<div class="container">
+		<p><font size=4>The predictions will be based on a pre-trained <b>Random Forest</b> model.</p>
+		<p><font size=3> The original dataset was published on "Extensive impact of non-antibiotic drugs on human gut bacteria" 
+			<b><i>Nature 555, pages 623–628 (29 March 2018)</b></i> by Lisa Maier, Mihaela Pruteanu, 
+			Michael Kuhn, Georg Zeller, Anja Telzerow, Exene Erin Anderson, Ana Rita Brochado, Keith Conrad Fernandez, Hitomi Dose, 
+			Hirotada Mori, Kiran Raosaheb Patil, Peer Bork and Athanasios Typas</font>
+		</p>
+	</div>
+		
+	
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script-->
+
+   
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="../static/js/bootstrap.min.js"></script>
+
+	</body>
+</html>
