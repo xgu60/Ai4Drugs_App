@@ -11,7 +11,7 @@ import psycopg2
 username = 'sheldon'
 host = 'localhost'
 dbname = 'med_db'
-pswd = '3721'
+pswd = '****'
 
 engine = create_engine('postgresql://%s:%s@%s/%s'%(username, pswd, host, dbname))
 if not database_exists(engine.url):
